@@ -24,6 +24,7 @@ jobs:
           echo "pre-prod-deploy-action"
 
   prod-deploy:
+    environment: production
     needs: pre-prod-deploy-action
     runs-on: ubuntu-latest
     steps:
