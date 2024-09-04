@@ -1,18 +1,32 @@
 on: push
 
 jobs:
-  stg:
-    name: stg
+  pre-stg-deploy-action:
     runs-on: ubuntu-latest
     steps:
-      - name: stg step 1
+      - name: pre-stg-deploy-action
         run: |
-          echo "stg step 1"
+          echo "pre-stg-deploy-action"
 
-  prod:
-    name: prod
+  stg-deploy:
+    needs: pre-stg-deploy-action
     runs-on: ubuntu-latest
     steps:
-      - name: prod step 1
+      - name: stg deploy
         run: |
-          echo "prod step 1"
+          echo "stg deploy"
+
+  pre-prod-deploy-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pre-prod-deploy-action
+        run: |
+          echo "pre-prod-deploy-action"
+
+  prod-deploy:
+    needs: pre-prod-deploy-action
+    runs-on: ubuntu-latest
+    steps:
+      - name: prod-deploy
+        run: |
+          echo "prod deploy"
