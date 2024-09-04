@@ -1,0 +1,18 @@
+on: push
+
+jobs:
+  stg:
+    name: stg
+    runs-on: ubuntu-latest
+    steps:
+      - name: stg step 1
+        run: |
+          echo "stg step 1"
+
+  prod:
+    name: prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: prod step 1
+        run: |
+          echo "prod step 1"
