@@ -1,6 +1,7 @@
 on: push
 
 jobs:
+  # 承認なし
   pre-stg-deploy-action:
     runs-on: ubuntu-latest
     steps:
@@ -16,6 +17,7 @@ jobs:
         run: |
           echo "stg deploy"
 
+  # 承認付き
   pre-prod-deploy-action:
     runs-on: ubuntu-latest
     steps:
