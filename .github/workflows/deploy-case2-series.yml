@@ -1,0 +1,29 @@
+on: push
+
+name: series（直列）
+
+jobs:
+  pre-stg-deploy-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pre-stg-deploy-action
+        run: |
+          echo "pre-stg-deploy-action"
+
+  stg-deploy:
+    environment: staging
+    needs: pre-stg-deploy-action
+    runs-on: ubuntu-latest
+    steps:
+      - name: stg deploy
+        run: |
+          echo "stg deploy"
+
+  prod-deploy:
+    environment: production
+    needs: stg-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: prod-deploy
+        run: |
+          echo "prod deploy"
