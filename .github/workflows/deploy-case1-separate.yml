@@ -1,6 +1,6 @@
 on: push
 
-name: separate
+name: separate（分割）
 
 jobs:
   # 承認なし
