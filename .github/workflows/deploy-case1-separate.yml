@@ -1,5 +1,7 @@
 on: push
 
+name: separate
+
 jobs:
   # 承認なし
   pre-stg-deploy-action:
