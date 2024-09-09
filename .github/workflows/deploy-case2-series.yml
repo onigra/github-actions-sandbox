@@ -1,4 +1,8 @@
-on: push
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 name: series（直列）
 
