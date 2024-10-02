@@ -6,10 +6,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     env:
-      head_ref1: ${{ github.event.pull_request.head.ref }}
-      head_ref2: ${{ github.event.pull_request.head.sha }}
-      base_ref:  ${{ github.event.pull_request.head.ref }}
+      branch_name: ${{ github.event.pull_request.head.ref }}
+      head_sha: ${{ github.event.pull_request.head.sha }}
     steps:
       - name: aaa
         run: |
-          echo ${{ github.event.pull_request }}
+          echo ${{ env.branch_name }}
