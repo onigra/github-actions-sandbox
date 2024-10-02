@@ -10,3 +10,7 @@ jobs:
       head_ref2: ${{ github.event.pull_request.head.sha }}
       base_ref:  ${{ github.event.pull_request.head.ref }}
       all: ${{ github.event.pull_request }}
+    steps:
+      - name: aaa
+        run: |
+          echo ${{ env.all }}
