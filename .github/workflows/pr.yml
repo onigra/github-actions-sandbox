@@ -1,0 +1,12 @@
+on: pull_request
+
+name: ref test
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      head_ref1: ${{ github.event.pull_request.head.ref }}
+      head_ref2: ${{ github.event.pull_request.head.sha }}
+      base_ref:  ${{ github.event.pull_request.head.ref }}
+      all: ${{ github.event.pull_request }}
